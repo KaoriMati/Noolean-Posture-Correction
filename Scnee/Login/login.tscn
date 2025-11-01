@@ -1,0 +1,264 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfi430nofu6yo"]
+
+[ext_resource type="Script" uid="uid://dj11ftyw8pvwe" path="res://Scnee/Login/Script/login.gd" id="1_amk8x"]
+[ext_resource type="Theme" uid="uid://d3apa2x48j37i" path="res://Saves/WhiteTheme.tres" id="1_vhbth"]
+[ext_resource type="Texture2D" uid="uid://c01enfibmphji" path="res://ExampleImage.jpg" id="3_tkihp"]
+[ext_resource type="Script" uid="uid://daj644js5sfoo" path="res://Scnee/Login/Script/password.gd" id="5_nyj1k"]
+[ext_resource type="Texture2D" uid="uid://w472ks20i62q" path="res://Icon/visibility_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="6_uda28"]
+[ext_resource type="Texture2D" uid="uid://c8om3unvjthly" path="res://Icon/visibility_off_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="7_88lce"]
+[ext_resource type="Texture2D" uid="uid://c31kdoi5l6wb1" path="res://Icon/add_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="7_uda28"]
+[ext_resource type="Texture2D" uid="uid://c8201502psxqf" path="res://ExampleLogin.jpg.png" id="8_88lce"]
+
+[sub_resource type="FontVariation" id="FontVariation_y0el4"]
+variation_embolden = 0.47
+
+[sub_resource type="LabelSettings" id="LabelSettings_tkihp"]
+font = SubResource("FontVariation_y0el4")
+font_size = 88
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.1882353)
+shadow_offset = Vector2(4.99, 2.625)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8cbgy"]
+font = SubResource("FontVariation_y0el4")
+font_size = 33
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 0.1882353)
+shadow_offset = Vector2(4.99, 2.625)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm7hj"]
+bg_color = Color(0.90588236, 0.8627451, 0.94509804, 1)
+border_width_top = 50
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 55
+corner_radius_bottom_right = 55
+shadow_color = Color(0, 0, 0, 0.22745098)
+shadow_size = 10
+shadow_offset = Vector2(3.625, 4.86)
+anti_aliasing_size = 1.404
+
+[sub_resource type="FontVariation" id="FontVariation_ub041"]
+variation_embolden = 0.87
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhbth"]
+font = SubResource("FontVariation_ub041")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_offset = Vector2(3.095, 3.58)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uda28"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj6o2"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[node name="Login" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_vhbth")
+script = ExtResource("1_amk8x")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="BG" type="TextureRect" parent="AspectRatioContainer"]
+modulate = Color(0.6706895, 0.6706895, 0.6706895, 1)
+layout_mode = 2
+texture = ExtResource("3_tkihp")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LeftPage" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_right = 0.4
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LeftPage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.0
+offset_top = -149.5
+offset_right = 293.0
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Godot App"
+label_settings = SubResource("LabelSettings_tkihp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="LeftPage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.0
+offset_top = -15.0
+offset_right = 293.0
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sign in or create an account"
+label_settings = SubResource("LabelSettings_8cbgy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPage" type="Control" parent="."]
+unique_name_in_owner = true
+layout_direction = 1
+layout_mode = 1
+anchor_left = 0.518
+anchor_top = 0.025
+anchor_right = 0.887
+anchor_bottom = 1.0
+offset_right = 8.789917
+offset_bottom = -36.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="RightPage"]
+modulate = Color(1, 1, 1, 0.5921569)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tm7hj")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="RightPage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_right = 0.9
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RightPage/AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Label" type="Label" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Sign in"
+label_settings = SubResource("LabelSettings_vhbth")
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="RightPage/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "New user?"
+label_settings = SubResource("LabelSettings_uda28")
+vertical_alignment = 2
+
+[node name="Button" type="Button" parent="RightPage/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " create an account"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Email" type="LineEdit" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(225.07, 47.95)
+layout_mode = 2
+placeholder_text = "Email"
+max_length = 254
+
+[node name="Password" type="LineEdit" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(225.07, 47.95)
+layout_mode = 2
+placeholder_text = "Password"
+max_length = 128
+script = ExtResource("5_nyj1k")
+
+[node name="TextureButton" type="TextureButton" parent="RightPage/AspectRatioContainer/VBoxContainer/Password"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("6_uda28")
+texture_disabled = ExtResource("7_88lce")
+stretch_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 34
+
+[node name="Button" type="Button" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 44.825)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "   Continue   "
+
+[node name="HSeparator3" type="HSeparator" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 34
+
+[node name="HSeparator4" type="HSeparator" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Button2" type="Button" parent="RightPage/AspectRatioContainer/VBoxContainer"]
+modulate = Color(0.25362062, 0.30412057, 0.39083394, 1)
+custom_minimum_size = Vector2(0, 44.825)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj6o2")
+text = "Continue with google "
+icon = ExtResource("7_uda28")
+
+[node name="ExampleLogin_jpg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(20, 433)
+texture = ExtResource("8_88lce")
+
+[connection signal="pressed" from="RightPage/AspectRatioContainer/VBoxContainer/Password/TextureButton" to="RightPage/AspectRatioContainer/VBoxContainer/Password" method="_on_texture_button_pressed"]
+[connection signal="toggled" from="RightPage/AspectRatioContainer/VBoxContainer/Password/TextureButton" to="RightPage/AspectRatioContainer/VBoxContainer/Password" method="_on_texture_button_toggled"]

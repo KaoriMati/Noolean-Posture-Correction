@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://odeqtdjin7f2"]
+
+[ext_resource type="FontFile" uid="uid://ce4x1va8lbdau" path="res://Font/DM_Sans/DMSans-VariableFont_opsz,wght.ttf" id="1_ktj17"]
+
+[resource]
+base_font = ExtResource("1_ktj17")

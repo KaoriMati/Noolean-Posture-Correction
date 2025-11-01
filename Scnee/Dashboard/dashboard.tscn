@@ -1,0 +1,359 @@
+[gd_scene load_steps=19 format=3 uid="uid://d3nh8gmr75dwd"]
+
+[ext_resource type="Texture2D" uid="uid://bceo5d344r6ik" path="res://ExampleImage2.jpg.png" id="1_dadwo"]
+[ext_resource type="FontVariation" uid="uid://odeqtdjin7f2" path="res://Font/GodotcompatFont/fontType1.tres" id="1_nixrd"]
+[ext_resource type="Script" uid="uid://b53k6whxflib7" path="res://Scnee/Dashboard/Script/dashboard.gd" id="1_o2c82"]
+[ext_resource type="Theme" uid="uid://d3apa2x48j37i" path="res://Saves/WhiteTheme.tres" id="1_o5c52"]
+[ext_resource type="Texture2D" uid="uid://2501qk0724k5" path="res://ExampleImage3.jpg.png" id="2_jun5h"]
+[ext_resource type="Texture2D" uid="uid://dxfboslvxnuib" path="res://Icon/home_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="2_m5nbq"]
+[ext_resource type="Texture2D" uid="uid://5h264my35073" path="res://Icon/explore_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="3_alskx"]
+[ext_resource type="Texture2D" uid="uid://c31kdoi5l6wb1" path="res://Icon/add_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="4_o2c82"]
+[ext_resource type="Texture2D" uid="uid://don1leb5ei4xw" path="res://Icon/notifications_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="5_o5c52"]
+[ext_resource type="Texture2D" uid="uid://bwxwtd7lkp08j" path="res://Icon/chat_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="6_h27hf"]
+[ext_resource type="Texture2D" uid="uid://lol5vugmsp5i" path="res://Icon/summarize_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" id="7_bfnwv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h27hf"]
+bg_color = Color(0, 0.16862746, 0.28627452, 1)
+shadow_size = 15
+
+[sub_resource type="Gradient" id="Gradient_o2c82"]
+colors = PackedColorArray(0, 0.16862746, 0.28627452, 1, 0.080573924, 0.4697553, 0.5433446, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o5c52"]
+gradient = SubResource("Gradient_o2c82")
+width = 374
+fill_from = Vector2(0.41603053, 0.71374047)
+fill_to = Vector2(0.40076336, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gddlq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mbajs"]
+font = ExtResource("1_nixrd")
+font_size = 31
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfnwv"]
+bg_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
+shadow_color = Color(0, 0, 0, 0.19215687)
+shadow_size = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cdq1"]
+
+[node name="Dashboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_o5c52")
+script = ExtResource("1_o2c82")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9764706, 0.9843137, 0.99215686, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="NavigationBar" type="Control" parent="HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.78
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/NavigationBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0, 0.16862746, 0.28627452, 1)
+
+[node name="Panel" type="Panel" parent="HBoxContainer/NavigationBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h27hf")
+
+[node name="PanelGrad" type="TextureRect" parent="HBoxContainer/NavigationBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_o5c52")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/NavigationBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NavigationBar/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Button" type="Label" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Godot App"
+label_settings = SubResource("LabelSettings_mbajs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 79
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Home" type="Button" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " Home"
+icon = ExtResource("2_m5nbq")
+alignment = 0
+expand_icon = true
+
+[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Discover" type="Button" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " Discover"
+icon = ExtResource("3_alskx")
+alignment = 0
+expand_icon = true
+
+[node name="HSeparator5" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Create" type="Button" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " Create"
+icon = ExtResource("4_o2c82")
+alignment = 0
+expand_icon = true
+
+[node name="HSeparator6" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Notification" type="Button" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " Notification"
+icon = ExtResource("5_o5c52")
+alignment = 0
+expand_icon = true
+
+[node name="HSeparator7" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Chat" type="Button" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " Chat"
+icon = ExtResource("6_h27hf")
+alignment = 0
+expand_icon = true
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 79
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gddlq")
+
+[node name="Chat2" type="Button" parent="HBoxContainer/NavigationBar/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = " Setting"
+icon = ExtResource("7_bfnwv")
+alignment = 0
+expand_icon = true
+
+[node name="Main" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 19.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="Control" parent="HBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Main/VBoxContainer/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfnwv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Main/VBoxContainer/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_bfnwv")
+stretch_mode = 5
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_bfnwv")
+stretch_mode = 5
+
+[node name="VSeparator4" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_bfnwv")
+stretch_mode = 5
+
+[node name="VSeparator5" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="Control" type="Control" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 26.8
+placeholder_text = "  Search"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.48
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="TextureButton4" type="TextureButton" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_bfnwv")
+stretch_mode = 5
+
+[node name="VSeparator6" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="TextureButton5" type="TextureButton" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_bfnwv")
+stretch_mode = 5
+
+[node name="VSeparator7" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="TextureButton6" type="TextureButton" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+modulate = Color(0.28485027, 0.28485027, 0.28485027, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("7_bfnwv")
+stretch_mode = 5
+
+[node name="VSeparator8" type="VSeparator" parent="HBoxContainer/Main/VBoxContainer/Header/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4cdq1")
+
+[node name="Control2" type="Control" parent="HBoxContainer/Main/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExampleImage2_jpg" type="Sprite2D" parent="."]
+position = Vector2(921, -551)
+texture = ExtResource("1_dadwo")
+
+[node name="ExampleImage3_jpg" type="Sprite2D" parent="."]
+position = Vector2(962, 1482)
+texture = ExtResource("2_jun5h")
